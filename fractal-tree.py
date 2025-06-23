@@ -23,10 +23,10 @@ def grow(length, decrease, angle, noise=0):
 
 tracer(0)
 penup()
-goto(0, -400)
+goto(0, -200)
 pendown()
 left(90)
-grow(150, 0.8, 15)
+grow(100, 0.8, 30)
 
 #tracer(0)
 exitonclick()
