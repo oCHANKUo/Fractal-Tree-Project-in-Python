@@ -17,14 +17,16 @@ def grow(length, decrease, angle, noise=0):
 
         right(angle_r)
         grow(new_length, decrease, angle, noise)
-        right(angle_r)
+        left(angle_r)
 
+        backward(length)
 
+tracer(0)
 penup()
 goto(0, -400)
 pendown()
 left(90)
-grow(150, 0.8, 0)
+grow(150, 0.8, 15)
 
-tracer(0)
+#tracer(0)
 exitonclick()
