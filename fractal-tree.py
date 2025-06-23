@@ -6,10 +6,16 @@ import random
 def grow(length, decrease, angle, noise=0):
 
     if length > 10:
+
+        width(length/10)
         forward(length)
+
         new_length = length * decrease
-        angle_l = angle
-        angle_r = angle
+        if noise > 0:
+            new_length *= random.uniform(0.9, 1.1)
+
+        angle_l = angle + random.gauss(0, noise)
+        angle_r = angle + random.gauss(0, noise)
 
         left(angle_l)
         grow(new_length, decrease, angle, noise)
@@ -21,12 +27,13 @@ def grow(length, decrease, angle, noise=0):
 
         backward(length)
 
+
 tracer(0)
 penup()
-goto(0, -200)
+goto(0, -400)
 pendown()
 left(90)
-grow(100, 0.8, 30)
+grow(150, 0.8, 20, 10)
 
 #tracer(0)
 exitonclick()
